@@ -1,5 +1,5 @@
-const { WebClient } = require("@slack/web-api");
 var hour = new Date().getHours() + 10;
+const { WebClient } = require("@slack/web-api");
 const axios = require("axios").default;
 const images = {
   morning:
