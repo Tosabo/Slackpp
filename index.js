@@ -1,4 +1,3 @@
-var hour = new Date().getHours() + 10;
 const { WebClient } = require("@slack/web-api");
 const axios = require("axios").default;
 const images = {
@@ -11,7 +10,7 @@ const images = {
 };
 
 async function setPFP() {
-  var hour = new Date().getHours() + 8;
+  var hour = new Date().getHours() + 10;
   let image;
   if (5 < hour && hour < 12) {
     image = await axios.get(images.morning, {

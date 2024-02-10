@@ -1,4 +1,3 @@
-var hour = new Date().getHours() + 10;
 const { WebClient } = require("@slack/web-api");
 const axios = require("axios").default;
 const images = {
@@ -9,9 +8,8 @@ const images = {
   night:
     "https://oldschool.runescape.wiki/images/thumb/Bronze_armour_set_%28lg%29_equipped.png/260px-Bronze_armour_set_%28lg%29_equipped.png?47433",
 };
-
 async function setPFP() {
-  var hour = new Date().getHours() + 8;
+  var hour = new Date().getHours() + 10;
   let image;
   if (5 < hour && hour < 12) {
     image = await axios.get(images.morning, {
@@ -32,7 +30,6 @@ async function setPFP() {
     token: process.env.SLACK_TOKEN,
   });
 }
-
 export default async (req, res) => {
   await setPFP();
   res.send("Started changing your PFP!");
